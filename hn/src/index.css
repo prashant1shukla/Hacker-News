@@ -14,6 +14,8 @@ body {
   font-size:16px;
   background-color:#111827;
 }
+
+
 form{
   margin-bottom: 2rem;
 
@@ -51,6 +53,39 @@ button:hover{
   color:slategray;
   cursor: pointer;
   transition:0.15s ease-in-out;
+}
+
+.spinner {
+  width: 5rem;
+  height: 5rem;
+  border: 0.2rem soild slategray;
+  border-top-color: red;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  transform: translate(-44%, -50%);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.category {
+  color: slategray;
+  margin-bottom: 1rem;
+}
+
+.category span{
+  color: #a3b4c4;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
 .section{
@@ -124,6 +159,8 @@ button:hover{
 
 }
 
+
+
 @media (min-width: 768px){
   .section .cards{
     grid-template-columns: repeat(2, 1fr);
@@ -141,8 +178,13 @@ button:hover{
   }
   input{
     width:100%;
+    font-size: 2.5 rem;
 
   }
+  .button {
+    font-size: 2.5 rem;
+  }
+
   .section{
     max-width: 992px;
     margin: auto;
