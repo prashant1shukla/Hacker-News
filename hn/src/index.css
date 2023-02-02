@@ -56,25 +56,10 @@ button:hover{
 }
 
 .spinner {
-  width: 5rem;
-  height: 5rem;
-  border: 0.2rem soild slategray;
-  border-top-color: red;
-  border-radius: 50%;
-  animation: spin 1s infinite linear;
-  position: absolute;
-  top: 50%;
-  left: 44%;
-  transform: translate(-44%, -50%);
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  content : "";
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .category {
@@ -170,23 +155,23 @@ button:hover{
 
 @media (min-width: 1024px){
   .section .title h1{
-    font-size: 4rem;
+    font-size: 3rem;
   }
   form{
     display: flex;
     align-items:center;
+    margin-top: -3em;
   }
   input{
     width:100%;
     font-size: 2.5 rem;
-
   }
   .button {
     font-size: 2.5 rem;
   }
 
   .section{
-    max-width: 992px;
+    max-width: 80vw;
     margin: auto;
   }
 }

@@ -12,7 +12,6 @@ function App() {
   const [isLoading, setIsLoading]= useState(true)
 
   useEffect(()=>{
-    setIsLoading(true)
     const fetchArticles= async() =>{
       const res= await fetch(
         `http://hn.algolia.com/api/v1/search?query=${query}`
@@ -20,9 +19,10 @@ function App() {
       const data = await res.json()
       setItems(data.hits)
       setLargeTitle(data.hits[0])
+      setIsLoading(false)
     }
     fetchArticles()
-    setIsLoading(false)
+    
   }, [query])
 
   const handleSubmit = (e) => {
@@ -63,7 +63,7 @@ function App() {
         theme="light"
       />
 
-      {isLoading ? (<div className="spinner"></div>) : 
+      {isLoading ? (<div className="spinner"><center><img src="time-01.png" width="200" height="200"></img></center></div>) : 
       (
         <>
           <article className="title">
